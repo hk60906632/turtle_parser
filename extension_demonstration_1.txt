@@ -1,0 +1,15 @@
+{
+  SET END1 := 1100 ;
+  SET END2 := 900 ;
+  DO loop FROM 0 TO END1 EVERY 130 {
+    DO loop2 FROM 50 TO END2 EVERY 130 {
+      MOVE_X : loop 1 * ;
+      MOVE_Y : loop2 0 + ;
+      DO loop3 FROM 1 TO 50 EVERY 1 {
+        SET Cat := loop3 1.5 * ;
+        FD Cat
+        RT 62
+      }
+    }
+  }
+}

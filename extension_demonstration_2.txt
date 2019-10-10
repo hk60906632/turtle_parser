@@ -1,0 +1,23 @@
+{
+  MOVE_X 250
+  DO Apple FROM 1 TO 8 EVERY 1 {
+    FD : 60 2 / ;
+    LT : 90 2 / ;
+  }
+  MOVE_X 500
+  DO Boy FROM 1 TO 100 EVERY 1 {
+    SET Cat := Boy 1.5 * ;
+    FD Cat
+    RT 62
+  }
+  MOVE_X 750
+  DO Apple FROM 1 TO 50 EVERY 1 {
+    FD Apple
+    RT 30
+    DO Bay FROM 1 TO 8 EVERY 1 {
+      SET Cat := Apple 5 / ;
+      FD Cat
+      RT : 90 2 / ;
+    }
+  }
+}

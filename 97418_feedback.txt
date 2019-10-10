@@ -1,0 +1,121 @@
+General Feedback
+----------------
+
+I marked this assignment entirely solo.
+
+I was generally impressed by the high standard of programming.  Testing
+for most seemed to involve using a lot of assert()s and several .ttl (or
+whatever extension you used) turtle/logo files. Without further documentation,
+this doesn't really meet the brief of convincing me that every line of
+code works.
+
+Extension varied from ones that had little to do with turtles
+(e.g. games), to extensions to the grammar (functions with parameters
+e.g.), to experimenting with some new library (e.g. HTML5 output rather
+than SDL).
+
+If your code didn't work for me, and you didn't expect it : Don't
+Panic. Simply arrange to come & see me - it's probably something very
+simple we can fix quickly!
+
+Some people's extension was to use a linked-list, rather than a static
+array to store instructions. I don't agree that this is an extension
+- it's a good thing to do coding-wise (so counts towards coding
+mark). Linked lists make sense if you quickly need to delete elements -
+you don't here - you could simply realloc() the array if required ?
+
+Note : putting printf()s in your code, and checking it's working as
+you're going along, is not really testing. Testing needs to be an
+automated action that, upon changing your code, you can run.
+
+Many run tests *every* time the program was run - I don't think this
+is necessary - you should switch them on/off, perhaps using a #define
+(via the makefile maybe).
+
+Almost no-one allowed the user to quit (ESC etc) during the running of
+the interpreter - you always had to wait until the end - could be awkward
+if you accidentally have some turtle code with an infinite loop :-(
+
+You don't call a header file "header.h". It's obvious from the ".h"
+extension it's a header. Give it a meaningful, helpful name.
+
+Parser was supposed to be "silent" if no errors - lots of people had it
+printing cheerful messages, turtle positions  etc.
+
+Some people seemed to have rounding errors so that files attempting to
+render smooth polygons came out blocky (e.g. spiral4.ttl) Maybe this
+is caused by storing the position of the turtle & it's angle as an int,
+not a double (?)
+
+Many people (20+) started to use -include file.h in their Makefiles. It's
+extremely uncommon that you need to do this. We did it in the ADT
+assignment to allow the dictionary underlying type to be efficiently
+swapped - generally you just include the file using a #include ...
+
+It didn't really mark it down as such, but people who interpreted the
+program by writing a massive number of co-ordinates to a structure to
+be rendered at the end - I'm not sure this is really interpreting -
+the joy of an interpreter (especially if the program takes a *long*
+time to run) is to be able to see progress as you go?
+
+Some of my test .ttl files :
+
+From my notes 
+{
+DO A FROM 1 TO 50 {
+FD A
+RT 30
+DO B FROM 1 TO 8 {
+SET C := A 5 / ;
+FD C
+RT 45 }
+} }
+
+
+Not really a spiral:
+spiral3.ttl 
+{
+   SET S := 0 ;
+   SET A := 0 ;
+   DO S FROM 3 TO 10 {
+      SET A := 360 S / ;
+      DO M FROM 1 TO S {
+         FD 20
+         RT A
+      }
+   }
+}
+
+
+Not really a spiral either:
+spiral4.ttl
+{
+   DO A FROM 1 TO 8 {
+      RT 45 DO B FROM 1 TO 6 {
+         DO C FROM 1 TO 90 {
+            FD 2 RT 2
+         } RT 90
+      }
+   }
+}
+
+
+
+Individual Feedback
+-------------------
+
+
+
+97418/makefile
+cc -o turtle_interpreter turtle_interpreter.c  neillsdl2.c `sdl2-config --cflags` `sdl2-config --libs` -lm -Wall -Wextra -Werror -Wfloat-equal -pedantic -ansi
+
+File testing.txt found : NO
+File extension.txt found : NO
+
+Coding : Generally nice coding - some additional self-documentation/commenting would be nice in places.
+Extension Done : Step-size in DO
+Testing Summary : Assertion testing.
+
+Final Mark : 65
+
+Final Comments : Works well with all my examples. The testing doesn't seem well documented - it's unclear what has/hasn't been tested.

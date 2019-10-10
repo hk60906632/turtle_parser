@@ -1,0 +1,27 @@
+{ } }
+FD .a30
+FD A
+FD 30
+FD #
+LT B
+LT 4.5
+RT C
+RT 30
+RT sajfkdlajfl
+RT @
+.3251
+3.231
+23115135.
+3..4
+SET A := B C * ;
+SET B
+SET dslkfjaslk := C * D ;
+DO A FROM 3 TO 4 {
+  FD 30
+}
+DO A
+DO B FROM 3 4
+DO A FROM B TO D {
+  FD 30
+}
+DOejkslfjl

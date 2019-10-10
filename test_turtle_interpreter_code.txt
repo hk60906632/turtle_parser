@@ -1,0 +1,25 @@
+RT 45
+RT 90
+LT 27
+LT 180
+SET B := 4 3 * ;
+SET C := 9 3 3 + * ;
+SET D := B C + ;
+B C ;
+B * ;
+{
+  DO H FROM 1 TO 5 {
+    RT 30
+  }
+}
+{
+  DO Z FROM 1 TO 5 {
+    RT Z
+  }
+}
+{
+  DO E FROM 6 TO 5 {
+    RT E
+    LT 90
+  }
+}

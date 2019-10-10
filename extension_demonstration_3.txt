@@ -1,0 +1,20 @@
+{
+  DO Apple FROM 1 TO 3 EVERY 1 {
+      FD 100
+      RT 45
+  }
+  MOVE_X 500
+  MOVE_Y 200
+  DO Apple FROM 1 TO 3 EVERY 4 {
+     FD 100
+     RT 90
+     FD 100
+  }
+  MOVE_X 200
+  MOVE_Y 300
+  DO Apple FROM 4 TO 3 EVERY 1 {
+     FD 100
+     RT 90
+     FD 100
+  }
+}
